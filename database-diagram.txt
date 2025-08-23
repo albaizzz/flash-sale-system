@@ -1,0 +1,85 @@
+// Use DBML to define your database structure
+// Docs: https://dbml.dbdiagram.io/docs
+
+Table products {
+  product_id integer
+  product_code varchar
+  name_product VARCHAR
+  description text
+  image_url varhcar
+  galery varchar
+}
+
+Table skus {
+  sku_id integer
+  product_id integer
+  sku_code varchar
+  stock integer
+  price float
+  weight integer
+  dimension integer
+  status integer
+  name_sku integer
+  created_at timestamp
+}
+
+table flash_sales {
+  flash_sale_id integer [primary key]
+  status_flash_sale integer
+  start_time timestamp
+  end_time timestamp
+  created_at timestamp
+  updated_at timestamp
+}
+
+Table flash_sale_stocks {
+  flash_sale_stock_id integer [primary key]
+  flash_sale_id integer
+  sku_id integer
+  product_id integer
+  price_flash_sale float
+  stock_flash_sale integer
+  created_at timestamp
+  updated_at timestamp
+}
+
+Table orders {
+  order_id integer [primary key]
+  user_id integer
+  flash_sale_id integer
+  order_status varchar // e.g. pending, paid, cancelled
+  total_price float
+  created_at timestamp
+  updated_at timestamp
+}
+
+Table order_items {
+  order_item_id integer [primary key]
+  order_id integer
+  sku_id integer
+  product_id integer
+  price float // harga saat order
+  quantity integer
+  subtotal float
+  created_at timestamp
+  updated_at timestamp
+}
+
+Table users {
+  user_id integer [primary key]
+  username varchar
+  role varchar
+  created_at timestamp
+}
+
+
+Ref product: skus.product_id > products.product_id // many-to-one
+
+Ref: flash_sales.flash_sale_id < flash_sale_stocks.flash_sale_id
+
+Ref: skus.sku_id < flash_sale_stocks.sku_id
+
+ref: orders.order_id < order_items.order_id
+
+ref: order_items.sku_id  > skus.sku_id
+ref: users.user_id < orders.user_id
