@@ -1,0 +1,64 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/27.0.5 Chrome/134.0.6998.205 Electron/35.3.0 Safari/537.36" version="27.0.5">
+  <diagram name="Page-1" id="4UTpFMnRdRumXqJg2Ljq">
+    <mxGraphModel dx="1426" dy="884" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="cj6IvjAhi29CiSl2rx_S-8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;dashed=1;" edge="1" parent="1" source="cj6IvjAhi29CiSl2rx_S-1" target="cj6IvjAhi29CiSl2rx_S-5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="cj6IvjAhi29CiSl2rx_S-1" value="API" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="240" y="280" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="cj6IvjAhi29CiSl2rx_S-15" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="cj6IvjAhi29CiSl2rx_S-3" target="cj6IvjAhi29CiSl2rx_S-1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="cj6IvjAhi29CiSl2rx_S-3" value="User" style="verticalLabelPosition=bottom;verticalAlign=top;html=1;shadow=0;dashed=0;strokeWidth=1;shape=mxgraph.android.phone2;strokeColor=#c0c0c0;" vertex="1" parent="1">
+          <mxGeometry x="70" y="230" width="82.05" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="cj6IvjAhi29CiSl2rx_S-13" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;startArrow=classic;startFill=1;" edge="1" parent="1" source="cj6IvjAhi29CiSl2rx_S-4" target="cj6IvjAhi29CiSl2rx_S-7">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="cj6IvjAhi29CiSl2rx_S-4" value="DB" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;" vertex="1" parent="1">
+          <mxGeometry x="461.7" y="440" width="60" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="cj6IvjAhi29CiSl2rx_S-10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;dashed=1;" edge="1" parent="1" source="cj6IvjAhi29CiSl2rx_S-5" target="cj6IvjAhi29CiSl2rx_S-7">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="cj6IvjAhi29CiSl2rx_S-5" value="" style="points=[];aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.kafka;" vertex="1" parent="1">
+          <mxGeometry x="460" y="289" width="56.699999999999996" height="42" as="geometry" />
+        </mxCell>
+        <mxCell id="cj6IvjAhi29CiSl2rx_S-6" value="Kafka" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="466.70000000000005" y="331" width="50" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="cj6IvjAhi29CiSl2rx_S-7" value="microservice-order" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="610" y="280" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="cj6IvjAhi29CiSl2rx_S-11" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;endArrow=classic;endFill=1;startArrow=classic;startFill=1;" edge="1" parent="1" source="cj6IvjAhi29CiSl2rx_S-1" target="cj6IvjAhi29CiSl2rx_S-4">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="300" y="480" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="cj6IvjAhi29CiSl2rx_S-14" value="" style="image;sketch=0;aspect=fixed;html=1;points=[];align=center;fontSize=12;image=img/lib/mscae/Cache_Redis_Product.svg;" vertex="1" parent="1">
+          <mxGeometry x="463.34999999999997" y="190" width="50" height="42" as="geometry" />
+        </mxCell>
+        <mxCell id="cj6IvjAhi29CiSl2rx_S-16" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.033;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="cj6IvjAhi29CiSl2rx_S-1" target="cj6IvjAhi29CiSl2rx_S-14">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="300" y="211" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="cj6IvjAhi29CiSl2rx_S-17" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.933;entryY=0.476;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="cj6IvjAhi29CiSl2rx_S-7" target="cj6IvjAhi29CiSl2rx_S-14">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="670" y="210" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
