@@ -1,5 +1,11 @@
 {
   "dependencies": {
-    "express": "^5.1.0"
+    "express": "^5.1.0",
+    "mysql2": "^3.14.3",
+    "sequelize": "^6.37.7"
+  },
+  "scripts": {
+    "dev": "node main.js",
+    "prod": "NODE_ENV=production node main.js"
   }
 }

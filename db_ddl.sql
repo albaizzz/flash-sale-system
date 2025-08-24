@@ -57,13 +57,14 @@ CREATE TABLE flash_sales (
 -- FLASH SALE STOCKS
 -- (tanpa product_id, karena sudah bisa via sku -> product)
 -- =====================================
-CREATE TABLE flash_sale_stocks (
-    flash_sale_stock_id INT AUTO_INCREMENT PRIMARY KEY,
+CREATE TABLE flash_sale_skus (
+    flash_sale_sku_id INT AUTO_INCREMENT PRIMARY KEY,
     flash_sale_id INT NOT NULL,
     sku_id INT NOT NULL,
     product_id INT NOT NULL,
     price_flash_sale DECIMAL(12,2),
     stock_flash_sale INT DEFAULT 0,
+    max_per_user INT DEFAULT 1,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
     CONSTRAINT fk_flashsale_stocks_flashsales FOREIGN KEY (flash_sale_id) 

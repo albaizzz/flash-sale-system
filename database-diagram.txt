@@ -32,8 +32,8 @@ table flash_sales {
   updated_at timestamp
 }
 
-Table flash_sale_stocks {
-  flash_sale_stock_id integer [primary key]
+Table flash_sale_skus {
+  flash_sale_sku_id integer [primary key]
   flash_sale_id integer
   sku_id integer
   product_id integer
@@ -75,9 +75,9 @@ Table users {
 
 Ref product: skus.product_id > products.product_id // many-to-one
 
-Ref: flash_sales.flash_sale_id < flash_sale_stocks.flash_sale_id
+Ref: flash_sales.flash_sale_id < flash_sale_skus.flash_sale_id
 
-Ref: skus.sku_id < flash_sale_stocks.sku_id
+Ref: skus.sku_id < flash_sale_skus.sku_id
 
 ref: orders.order_id < order_items.order_id
 

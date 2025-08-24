@@ -1,9 +1,17 @@
 const { Sequelize } = require("sequelize");
+const Product = require("./products.js");
+const Sku = require("./sku.js");
+const FlashSale = require("./flash-sale.js");
+const FlashSaleSku = require("./flash-sale-sku.js");
+const Order = require("./order.js");
+const OrderItem = require("./order-item.js");
+const User = require("./user.js");
 
 const sequelize = new Sequelize("flash_sale", "root", "Secret123!", {
   host: "localhost",
   dialect: "mysql",
-  logging: false,
+  logging: true,
+  logging: console.log, // ✅ tampilkan semua query di console
 });
 
 const db = {};
@@ -12,23 +20,23 @@ db.Sequelize = Sequelize;
 db.sequelize = sequelize;
 
 // Import models
-db.Product = require("./product")(sequelize, Sequelize);
-db.Sku = require("./sku")(sequelize, Sequelize);
-db.FlashSale = require("./flashSale")(sequelize, Sequelize);
-db.FlashSaleStock = require("./flashSaleStock")(sequelize, Sequelize);
-db.Order = require("./order")(sequelize, Sequelize);
-db.OrderItem = require("./orderItem")(sequelize, Sequelize);
-db.User = require("./user")(sequelize, Sequelize);
+db.Product = Product(sequelize, Sequelize);
+db.Sku = Sku(sequelize, Sequelize);
+db.FlashSale = FlashSale(sequelize, Sequelize);
+db.FlashSaleSku = FlashSaleSku(sequelize, Sequelize);
+db.Order = Order(sequelize, Sequelize);
+db.OrderItem = OrderItem(sequelize, Sequelize);
+db.User = User(sequelize, Sequelize);
 
 // Relations
 db.Product.hasMany(db.Sku, { foreignKey: "product_id" });
 db.Sku.belongsTo(db.Product, { foreignKey: "product_id" });
 
-db.FlashSale.hasMany(db.FlashSaleStock, { foreignKey: "flash_sale_id" });
-db.FlashSaleStock.belongsTo(db.FlashSale, { foreignKey: "flash_sale_id" });
+db.FlashSale.hasMany(db.FlashSaleSku, { foreignKey: "flash_sale_id" });
+db.FlashSaleSku.belongsTo(db.FlashSale, { foreignKey: "flash_sale_id" });
 
-db.Sku.hasMany(db.FlashSaleStock, { foreignKey: "sku_id" });
-db.FlashSaleStock.belongsTo(db.Sku, { foreignKey: "sku_id" });
+db.Sku.hasMany(db.FlashSaleSku, { foreignKey: "sku_id" });
+db.FlashSaleSku.belongsTo(db.Sku, { foreignKey: "sku_id" });
 
 db.User.hasMany(db.Order, { foreignKey: "user_id" });
 db.Order.belongsTo(db.User, { foreignKey: "user_id" });

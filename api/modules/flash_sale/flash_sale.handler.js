@@ -1,23 +1,39 @@
-const flashSaleService = require("./flash_sale.service");
+// handlers/flash_sale.handler.js
+const flashSaleService = require("./flash_sale.service.js");
 
-class ProductController {
-  async getAll(req, res, next) {
-    try {
-      const products = await productService.listProducts();
-      res.json(products);
-    } catch (err) {
-      next(err);
-    }
-  }
-
+class FlashSaleHandler {
   async getActiveFlashSales(req, res, next) {
     try {
       const currentTime = new Date();
-      const activeFlashSales = await flashSaleService.getActiveFlashSales(currentTime);
-      res.json(activeFlashSales);
+      const activeFlashSales = await flashSaleService.getFlashSaleActiveByTime(currentTime);
+      res.json({
+        code: 2000,
+        data: activeFlashSales,
+        message: ""
+      });
     } catch (err) {
       next(err);
     }
   }
+
+  async getFlashSaleItems(req, res, next) {
+    try {
+      const currentTime = new Date();
+      var  flashSaleSkuId = null;
+      if (req.params.id) {
+        flashSaleSkuId=req.params.id
+      }
+      const activeFlashSales = await flashSaleService.getFlashSaleActiveItems(currentTime, flashSaleSkuId);
+      res.json({
+        code: 2000,
+        data: activeFlashSales,
+        message: ""
+      });
+    } catch (err) {
+      next(err);
+    }
+  }
+
 }
-  module.exports = new ProductController();
+
+module.exports = new FlashSaleHandler();
