@@ -36,4 +36,4 @@ class FlashSaleHandler {
 
 }
 
-module.exports = new FlashSaleHandler();
+module.exports =  new FlashSaleHandler();
