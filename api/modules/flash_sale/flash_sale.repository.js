@@ -23,7 +23,7 @@ class FlashSaleRepository {
 
   async  getFlashSaleActiveItems(currentTime, flashSaleSkuId = null) {
     var query = `
-      SELECT fs.flash_sale_id, fss.flash_sale_sku_id, fs.status_flash_sale, fs.start_time, fs.end_time, fss.sku_id, fss.stock_flash_sale, s.price, fss.price_flash_sale , ROUND(((s.price - fss.price_flash_sale) / s.price) * 100, 2) AS discount_percent,
+      SELECT fs.flash_sale_id, fss.flash_sale_sku_id, fss.max_per_user , fs.status_flash_sale, fs.start_time, fs.end_time, fss.sku_id, fss.stock_flash_sale, s.price, fss.price_flash_sale , ROUND(((s.price - fss.price_flash_sale) / s.price) * 100, 2) AS discount_percent,
              s.sku_code, s.price, p.product_id, p.product_code, p.product_name, p.description, p.image_url, p.gallery
       FROM flash_sales fs
       JOIN flash_sale_skus fss ON fs.flash_sale_id = fss.flash_sale_id
