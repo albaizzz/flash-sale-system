@@ -6,4 +6,5 @@ const flashSaleHandler = require("./flash_sale.handler.js");
 router.get("/", flashSaleHandler.getActiveFlashSales);
 router.get("/items", flashSaleHandler.getFlashSaleItems);
 router.get("/items/:id", flashSaleHandler.getFlashSaleItems);
+
 module.exports = router;

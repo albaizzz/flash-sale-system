@@ -13,7 +13,10 @@ class FlashSaleService {
   async getFlashSaleActiveItems(currentTime, flashSaleSkuId = null) {
     var items = await this.flashSaleRepository.getFlashSaleActiveItems(currentTime,flashSaleSkuId);
     if (flashSaleSkuId !== null) {
-      items[0].order_eligible = true;
+      if (items.length === 0) {
+        throw new Error("Flash Sale Item not found or not active");
+      }
+      items[0] = Object.assign(items[0], { order_eligible:  true });
       var SkuComplete = await this.getFlashSaleSkuOrderCompleted(items[0].sku_id);  
       if (SkuComplete.count >= items[0].max_per_user) {
         items[0].order_eligible = false;
